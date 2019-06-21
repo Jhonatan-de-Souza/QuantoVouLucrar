@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Page } from "tns-core-modules/ui/page";
 
 @Component({
   selector: 'ns-home',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
   moduleId: module.id,
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   faturamentoPreImposto;
   impostoEmpresaAPagar;
   percentualImposto;
@@ -18,8 +19,10 @@ export class HomeComponent {
   salarioProLabore = 0;
   isItemVisible = false;
 
-  constructor() {
-
+  constructor(private page: Page) { }
+  
+  ngOnInit() {
+    this.page.actionBarHidden = true;
   }
   calcularImpostos() {
     this.exibirResultados();

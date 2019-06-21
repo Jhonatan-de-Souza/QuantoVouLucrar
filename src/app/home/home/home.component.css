@@ -1,1 +1,11 @@
 /* Add mobile styles for the component here.  */
+.form {
+    padding: 15%;
+    background-color: #7c4dff; /* alternative #651fff*/
+    color:white;
+}
+
+.placeHolderColor {
+    placeholder-color:#eeeeee;
+    font-size: 15%;
+}
