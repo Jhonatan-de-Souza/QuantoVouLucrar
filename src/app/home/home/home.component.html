@@ -1,1 +1,29 @@
-<Button text="home works!" class="btn btn-primary"></Button>
+<StackLayout class="form">
+    <Label text="Faturamento total da empresa?" textWrap="true"></Label>
+    <TextField keyboardType="number" hint="Entre o faturamento total sem descontos aqui"
+            [(ngModel)]='faturamentoPreImposto'></TextField>
+
+    <Label text="Percentual de Imposto a pagar" textWrap="true"></Label>
+    <TextField keyboardType="number" hint="%" [(ngModel)]='percentualImposto'></TextField>
+
+    <Label text="Quanto pro-labore irá retirar?" textWrap="true"></Label>
+    <TextField keyboardType="number" hint="%" [(ngModel)]='percentualProLabore'></TextField>
+    
+    <StackLayout [visibility]="isItemVisible ? 'visible' : 'collapsed'">
+            <Label text="Imposto a pagar sobre Faturamento Bruto" textWrap="true"></Label>
+            <TextView [(ngModel)]='impostoEmpresaAPagar' editable="false"></TextView>
+
+            <Label text="INSS a pagar:" textWrap="true"></Label>
+            <TextField [(ngModel)]='inssAPagar'></TextField>
+
+            <Label text="IRPF a pagar:" textWrap="true"></Label>
+            <TextView [(ngModel)]='irpfAPagar' editable="false"></TextView>
+
+            <Label text="Total de Taxas e impostos a pagar:" textWrap="true"></Label>
+            <TextView [(ngModel)]='totalAPagar' editable="false"></TextView>
+
+            <Label text="Quanto vou lucrar?" textWrap="true"></Label>
+            <TextView [(ngModel)]='quantoVouLucrar' editable="false"></TextView>
+    </StackLayout>
+    <button (tap)="calcularImpostos()" text="Calcular"></button>
+</StackLayout>
