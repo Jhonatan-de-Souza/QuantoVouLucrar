@@ -6,6 +6,16 @@
 }
 
 .placeHolderColor {
-    placeholder-color:#eeeeee;
+    placeholder-color:#d8d8d8;
     font-size: 15%;
+}
+.button {
+    background-color: aliceblue;
+    color:#66bb6a;   
+}
+.profit {
+    color:#66bb6a;
+}
+.taxes {
+    color:#ff7961;
 }

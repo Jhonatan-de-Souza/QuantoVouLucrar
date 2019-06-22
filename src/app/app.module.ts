@@ -6,7 +6,8 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from './home/home/home.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { ResultadosComponent } from "./resultados/resultados.component";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
@@ -17,11 +18,13 @@ import { HomeComponent } from './home/home/home.component';
     ],
     imports: [
         NativeScriptModule,
+        NativeScriptFormsModule,
         AppRoutingModule
     ],
     declarations: [
         AppComponent,
         HomeComponent,
+        ResultadosComponent
     ],
     providers: [],
     schemas: [
