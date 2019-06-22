@@ -9,24 +9,7 @@
     
         <Label text="Quanto pro-labore irá retirar?" textWrap="true"></Label>
         <TextField class="placeHolderColor" keyboardType="number" hint="%" [(ngModel)]='companyInfo.associateWagePercent'></TextField>
-        
-        <StackLayout [visibility]="isItemVisible ? 'visible' : 'collapsed'">
-                <Label text="Imposto a pagar sobre Faturamento Bruto" textWrap="true"></Label>
-                <TextView class='taxes' [(ngModel)]='companyInfo.companyProfitTax' editable="false"></TextView>
-    
-                <Label text="INSS a pagar:" textWrap="true"></Label>
-                <TextField class='taxes' [(ngModel)]='companyInfo.inssTax'></TextField>
-    
-                <Label text="IRPF a pagar:" textWrap="true"></Label>
-                <TextView class='taxes' [(ngModel)]='companyInfo.irpfTax' editable="false"></TextView>
-    
-                <Label text="Total de Taxas e impostos a pagar:" textWrap="true"></Label>
-                <TextView class='taxes' [(ngModel)]='companyInfo.totalTaxes' editable="false"></TextView>
-    
-                <Label text="Quanto vou lucrar?" textWrap="true"></Label>
-                <TextView class='profit' [(ngModel)]='companyInfo.totalProfit' editable="false"></TextView>
-        </StackLayout>
-        <button class="button" (tap)="calculateTaxes()" text="Calcular"></button>
-        <!-- <button class="button" (tap)="calcularImpostos()" text="Calcular" [nsRouterLink]="['/resultados']" pageTransition="slide"></button> -->
+     
+        <button class="button" (tap)="calculateTaxes()" text="Calcular" [nsRouterLink]="['/resultados']" pageTransition="slide"></button>
     </StackLayout>
 </ScrollView>

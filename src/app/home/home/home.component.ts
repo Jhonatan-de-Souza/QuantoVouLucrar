@@ -1,3 +1,4 @@
+import { CompanyInfoService } from './../../services/company-info.service';
 import { Component, OnInit } from '@angular/core';
 import { Page } from "tns-core-modules/ui/page";
 import { CompanyInfo } from '../shared/Company-Info.model';
@@ -21,11 +22,13 @@ export class HomeComponent implements OnInit {
     totalProfit: 0,
     totalTaxes:0,
   };
+  message:string;
 
-  constructor(private page: Page) { }
+  constructor(private page: Page,private companyInfoService: CompanyInfoService) { }
 
   ngOnInit() {
     this.page.actionBarHidden = true;
+    this.companyInfoService.currentMessage.subscribe(data => this.companyInfo = data)
   }
   calculateTaxes() {
     this.calculateTaxesOnProfit();
@@ -96,7 +99,6 @@ export class HomeComponent implements OnInit {
     function isWithinRange4() {
       return wage >= range4Min;
     }
-
   }
 
   // Calcula o Total de Impostos a Pagar
@@ -106,6 +108,21 @@ export class HomeComponent implements OnInit {
   //Calcula quanto a empresa irá lucrar após pagar impostos
   calculateCompanyProfit() {
     this.companyInfo.totalProfit = this.companyInfo.profitBeforeTax - this.companyInfo.totalTaxes;
-    this.companyInfo.totalProfit = 'R$' + this.companyInfo.totalProfit;
+    this.updateCompanyInfo();
+  }
+
+  updateCompanyInfo(){
+    this.companyInfoService.changeMessage({
+      associateWage: this.companyInfo.associateWage,
+      associateWagePercent: this.companyInfo.associateWagePercent,
+      companyIncomePercentTax: this.companyInfo.companyIncomePercentTax,
+      companyProfitTax: this.companyInfo.companyProfitTax,
+      employeeTax: this.companyInfo.employeeTax,
+      inssTax: this.companyInfo.inssTax,
+      irpfTax: this.companyInfo.irpfTax,
+      profitBeforeTax: this.companyInfo.profitBeforeTax,
+      totalProfit: this.companyInfo.totalProfit,
+      totalTaxes: this.companyInfo.totalTaxes
+    });
   }
 }

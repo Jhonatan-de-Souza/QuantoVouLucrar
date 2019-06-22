@@ -1,3 +1,4 @@
+import { CompanyInfoService } from './services/company-info.service';
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
@@ -26,7 +27,7 @@ import { ResultadosComponent } from "./resultados/resultados.component";
         HomeComponent,
         ResultadosComponent
     ],
-    providers: [],
+    providers: [CompanyInfoService],
     schemas: [
         NO_ERRORS_SCHEMA
     ]
