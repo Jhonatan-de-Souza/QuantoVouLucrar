@@ -26,7 +26,7 @@
                 <Label text="Quanto vou lucrar?" textWrap="true"></Label>
                 <TextView class='profit' [(ngModel)]='companyInfo.totalProfit' editable="false"></TextView>
         </StackLayout>
-        <button class="button" (tap)="calcularImpostos()" text="Calcular"></button>
+        <button class="button" (tap)="calculateTaxes()" text="Calcular"></button>
         <!-- <button class="button" (tap)="calcularImpostos()" text="Calcular" [nsRouterLink]="['/resultados']" pageTransition="slide"></button> -->
     </StackLayout>
 </ScrollView>
