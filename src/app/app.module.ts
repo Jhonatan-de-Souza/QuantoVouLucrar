@@ -7,7 +7,7 @@ import { AppComponent } from "./app.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
-import { ResultadosComponent } from "./resultados/resultados.component";
+import { ResultadosComponent } from "./components/resultados/resultados.component";
 import { UserInputWizardStep1Component } from './components/user-input-wizard/user-input-wizard-step1/user-input-wizard-step1.component';
 import { UserInputWizardStep2Component } from './components/user-input-wizard/user-input-wizard-step2/user-input-wizard-step2.component';
 import { UserInputWizardStep3Component } from './components/user-input-wizard/user-input-wizard-step3/user-input-wizard-step3.component';

@@ -1,4 +1,4 @@
-import { CompanyInfo } from './../home/shared/Company-Info.model';
+import { CompanyInfo } from '../components/shared/Company-Info.model
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 

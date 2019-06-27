@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { CompanyInfoService } from "../services/company-info.service";
-import { CompanyInfo } from "../home/shared/Company-Info.model";
+import { CompanyInfoService } from "../../services/company-info.service";
+import { CompanyInfo } from "../shared/Company-Info.model";
 import { Page } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
 

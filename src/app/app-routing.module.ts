@@ -4,7 +4,7 @@ import { UserInputWizardStep3Component } from './components/user-input-wizard/us
 import { NgModule } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
-import { ResultadosComponent } from './resultados/resultados.component';
+import { ResultadosComponent } from './components/resultados/resultados.component';
 
 const routes: Routes = [
     // { path: "", redirectTo: "/home", pathMatch: "full" },

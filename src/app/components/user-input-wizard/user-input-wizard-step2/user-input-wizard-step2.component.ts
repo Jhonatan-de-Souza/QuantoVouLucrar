@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanyInfo } from '~/app/home/shared/Company-Info.model';
+import { CompanyInfo } from '~/app/components/shared/Company-Info.model';
 import { CompanyInfoService } from '~/app/services/company-info.service';
 
 @Component({
