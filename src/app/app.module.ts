@@ -4,11 +4,13 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { HomeComponent } from './home/home/home.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { ResultadosComponent } from "./resultados/resultados.component";
+import { UserInputWizardStep1Component } from './components/user-input-wizard/user-input-wizard-step1/user-input-wizard-step1.component';
+import { UserInputWizardStep2Component } from './components/user-input-wizard/user-input-wizard-step2/user-input-wizard-step2.component';
+import { UserInputWizardStep3Component } from './components/user-input-wizard/user-input-wizard-step3/user-input-wizard-step3.component';
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
@@ -24,8 +26,10 @@ import { ResultadosComponent } from "./resultados/resultados.component";
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
-        ResultadosComponent
+        ResultadosComponent,
+        UserInputWizardStep1Component,
+        UserInputWizardStep2Component,
+        UserInputWizardStep3Component
     ],
     providers: [CompanyInfoService],
     schemas: [

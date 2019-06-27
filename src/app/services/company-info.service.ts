@@ -6,21 +6,23 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class CompanyInfoService { 
 
     private messageSource = new BehaviorSubject<CompanyInfo>({
-        associateWage:0,
-        associateWagePercent:0,
-        companyIncomePercentTax:0,
-        companyProfitTax:0,
-        employeeTax:0,
-        inssTax:0,
-        irpfTax:0,
-        profitBeforeTax:0,
-        totalProfit:0,
-        totalTaxes:0,
+        associateWage:undefined,
+        associateWagePercent:undefined,
+        companyIncomePercentTax:undefined,
+        companyProfitTax:undefined,
+        employeeTax:undefined,
+        inssTax:undefined,
+        irpfTax:undefined,
+        profitBeforeTax:undefined,
+        totalProfit:undefined,
+        totalTaxes:undefined,
     });
 
     currentMessage = this.messageSource.asObservable();
 
-    constructor() { }
+    constructor() { 
+      
+    }
 
     changeMessage(companyInfo: CompanyInfo) {
         this.messageSource.next(companyInfo);

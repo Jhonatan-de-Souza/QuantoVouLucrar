@@ -1,18 +1,42 @@
-<ScrollView>
-    <StackLayout class='form'>
-        <Label text="Imposto a pagar sobre Faturamento Bruto" textWrap="true"></Label>
-        <TextView class='taxes' [(ngModel)]='companyInfo.companyProfitTax' editable="false"></TextView>
+<DockLayout stretchLastChild="true" backgroundColor="#000323">
+    <!-- Total Taxes Paid -->
+    <StackLayout orientation="vertical" class="m-t-5 p-y-5" backgroundColor="#000323" dock="bottom">
+        <GridLayout columns="*, 140" rows="auto" class="m-x-20">
+            <Label text="Total de Impostos:" row="0" col="0" fontSize="18" class="large body m-l-10"
+                textWrap="true" color="#ffffff"></Label>
+                <Label [text]="companyInfo.totalTaxes" row="0" col="1" fontSize="18" class="large body"
+                textWrap="true" color="#ef032b"></Label>
+        </GridLayout>
+    </StackLayout>
+    <!-- /Total Taxes Paid-->
+    <!-- Taxes Detailed Listing -->
+    <StackLayout dock="top" orientation="vertical" class="m-t-0" backgroundColor="#2C3251">
+        <GridLayout backgroundColor="#000323" columns="120, *" rows="auto, auto, auto" class="m-b-10 p-x-20">
+            <Label text="Lucro:" row="0" col="0" class="large" color="#ffffff"></Label>
+            <Label [text]="month + ' ' + date + ', ' + year" row="1" col="0" class="body small" color="#ffffff"></Label>
+            <Label [text]="companyInfo.totalProfit"  textWrap="true" row="0" col="1" class="profit"
+                color="#66bb6a"></Label>
+            <Label text="Por mês" row="1" col="1" class="body small" color="#338a3e"></Label>
+        </GridLayout>
+        <ListView class="p-t-5" #listView [items]="taxes" backgroundColor="#2C3251" separatorColor="transparent">
+            <ng-template let-item="item">
+                <GridLayout columns="120, *" rows="auto, auto, auto" class="p-l-10" backgroundColor="#2C3251"
+                    (tap)="onRadItemTap(item.name)">
+                    <Label style="color: #ff5855" textWrap="true" [text]="'-' + item.amount" row="0" col="0" class="h2 taxes"
+                        color="#89D5E2"></Label>
+                    <Label [text]="item.name" textWrap="true" row="0" col="1" class="p-l-10 h2 p-r-20 taxes"></Label>
+                    <Label [text]="item.description" textWrap="true" row="1" col="1" textWrap="true"  class="p-l-10 body p-r-20 taxes" color="#C2C8E6"></Label>
+                    <StackLayout class="hr-light m-y-20" row="2" col="1" *ngIf="!item.last"></StackLayout>
+                    <StackLayout class="m-y-20" row="2" col="1" *ngIf="item.last"></StackLayout>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+    <!-- /Taxes Detailed Listing-->
+    <!-- Profit -->
+    <!-- <StackLayout orientation="vertical" dock="bottom" > -->
+        
+    <!-- </StackLayout> -->
+    <!-- /Profit -->
 
-        <Label text="INSS a pagar:" textWrap="true"></Label>
-        <TextField class='taxes' [(ngModel)]='companyInfo.inssTax'></TextField>
-
-        <Label text="IRPF a pagar:" textWrap="true"></Label>
-        <TextView class='taxes' [(ngModel)]='companyInfo.irpfTax' editable="false"></TextView>
-
-        <Label text="Total de Taxas e impostos a pagar:" textWrap="true"></Label>
-        <TextView class='taxes' [(ngModel)]='companyInfo.totalTaxes' editable="false"></TextView>
-
-        <Label text="Quanto vou lucrar?" textWrap="true"></Label>
-        <TextView class='profit' [(ngModel)]='companyInfo.totalProfit' editable="false"></TextView>
-</StackLayout>
-</ScrollView>
+</DockLayout>

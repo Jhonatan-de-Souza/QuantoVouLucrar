@@ -1,33 +1,30 @@
-import { CompanyInfoService } from './../../services/company-info.service';
 import { Component, OnInit } from '@angular/core';
-import { Page } from "tns-core-modules/ui/page";
-import { CompanyInfo } from '../shared/Company-Info.model';
+import { CompanyInfo } from '~/app/home/shared/Company-Info.model';
+import { CompanyInfoService } from '~/app/services/company-info.service';
 
 @Component({
-  selector: 'ns-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'ns-user-input-wizard-step3',
+  templateUrl: './user-input-wizard-step3.component.html',
+  styleUrls: ['./user-input-wizard-step3.component.css'],
   moduleId: module.id,
 })
-export class HomeComponent implements OnInit {
-  companyInfo: CompanyInfo = {
-    associateWage : 0,
-    associateWagePercent: 0,
-    companyProfitTax: 0,
-    companyIncomePercentTax:0,
-    employeeTax: 0,
-    inssTax: 0,
-    irpfTax: 0,
-    profitBeforeTax: 0,
-    totalProfit: 0,
-    totalTaxes:0,
-  };
-  message:string;
+export class UserInputWizardStep3Component implements OnInit {
 
-  constructor(private page: Page,private companyInfoService: CompanyInfoService) { }
+  companyInfo: CompanyInfo = {
+    associateWage: undefined,
+    associateWagePercent: undefined,
+    companyProfitTax: undefined,
+    companyIncomePercentTax: undefined,
+    employeeTax: undefined,
+    inssTax: undefined,
+    irpfTax: undefined,
+    profitBeforeTax: undefined,
+    totalProfit: undefined,
+    totalTaxes: undefined,
+  };
+  constructor(private companyInfoService: CompanyInfoService) { }
 
   ngOnInit() {
-    this.page.actionBarHidden = true;
     this.companyInfoService.currentMessage.subscribe(data => this.companyInfo = data)
   }
   calculateTaxes() {

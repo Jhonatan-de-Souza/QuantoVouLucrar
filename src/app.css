@@ -9,4 +9,59 @@ In many cases you may want to use the NativeScript core theme instead
 of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 */
-@import '~nativescript-theme-core/css/core.light.css';
+/* @import '~nativescript-theme-core/css/core.light.css'; */
+@import '~nativescript-theme-core/css/core.dark.css';
+
+.page {
+    background-color: #2C3251;
+}
+
+.action-bar {
+    background-color: #2C3251;
+}
+
+label {
+    /* https://www.nativescript.org/blog/using-custom-fonts-in-a-nativescript-app */
+    font-family: "Quicksand", "Quicksand-Regular", "Quicksand-Bold";
+    color: white;
+}
+.wizardLabel {
+    /* https://www.nativescript.org/blog/using-custom-fonts-in-a-nativescript-app */
+    font-family: "Quicksand", "Quicksand-Regular", "Quicksand-Bold";
+    color: black;
+    font-size:30;
+}
+
+.large {
+    font-size: 40;
+    font-weight: bold;
+    margin-bottom: 5;
+    vertical-align: top;
+}
+
+.medium {
+    font-size: 28;
+    /* font-weight: bold; */
+    margin-bottom: 5;
+    vertical-align: top;
+}
+
+.small {
+    font-size: 15;
+    margin: 0;
+    /* text-align: left;  */
+}
+
+.hr-light {
+    background-color: white;
+    opacity: 0.1;
+}
+
+.hint {
+    color: #505153;
+    font-family: "Quicksand", "Quicksand-Regular", "Quicksand-Bold";
+    font-weight: 300;
+}
+.wizardForm {
+    padding:15%;
+}

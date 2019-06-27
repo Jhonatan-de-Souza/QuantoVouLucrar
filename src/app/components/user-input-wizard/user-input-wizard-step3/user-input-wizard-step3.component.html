@@ -1,0 +1,9 @@
+<StackLayout orientation="vertical" class="wizardForm">
+    <Label text="Quanto Pro-Labore irá retirar?" textWrap="true" class="wizardLabel"></Label>
+    <TextField keyboardType="number" class="placeHolderColor input m-t-10 m-b-10" hint="%" [(ngModel)]='companyInfo.associateWagePercent'></TextField>
+    <Label text="insira o percentual de pro-labore que deve ser retirado em cima do faturamento" textWrap="true" style="font-weight: 300;" class="hint"></Label>
+
+    <button class="m-t-10 button btn-outline" (tap)="calculateTaxes()" text="Continuar" [nsRouterLink]="['/resultados']"
+        pageTransition="slide"></button> -->
+</StackLayout>
+    

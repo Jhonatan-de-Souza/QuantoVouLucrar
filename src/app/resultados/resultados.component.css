@@ -15,7 +15,18 @@
 }
 .profit {
     color:#66bb6a;
+    font-weight: bold;
+    font-size: 30%;
+    margin-bottom: 5;
+    vertical-align: top;
+    margin-top:9;
 }
 .taxes {
-    color:#ff7961;
+    color:#ff7961; 
+    font-size: 15vw;
+}
+
+.smallGreenArrow {
+    height:50px;
+    width:50px;
 }

@@ -1,6 +1,6 @@
 export class CompanyInfo {
-    profitBeforeTax; //Tax Pre-Impostos
-    companyIncomePercentTax // Taxas por CNAE  - percentualImposto
+    profitBeforeTax ; //Tax Pre-Impostos
+    companyIncomePercentTax; // Taxas por CNAE  - percentualImposto
     companyProfitTax; // Impostos sobre faturamento - impostoEmpresaAPagar
     inssTax; // Taxa INSS
     irpfTax; // Taxa IRPF
