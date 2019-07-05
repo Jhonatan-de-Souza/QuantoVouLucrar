@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyInfoService } from '~/app/services/company-info.service';
 import { CompanyInfo } from '~/app/components/shared/Company-Info.model';
+import { Page } from 'tns-core-modules/ui/page/page';
 
 
 @Component({
@@ -18,27 +19,21 @@ export class UserInputWizardStep1Component implements OnInit {
     employeeTax: undefined,
     inssTax: undefined,
     irpfTax: undefined,
-    profitBeforeTax: undefined,
+    profitBeforeTax: '',
     totalProfit: undefined,
     totalTaxes: undefined,
   };
-  constructor(private companyInfoService: CompanyInfoService) { }
+  constructor(private companyInfoService: CompanyInfoService, private page: Page) { }
 
   ngOnInit() {
+    this.page.actionBarHidden = true;
     this.companyInfoService.currentMessage.subscribe(data => this.companyInfo = data)
-   }
-  
-  formatMe() {
-    console.log('stored value' + this.companyInfo.profitBeforeTax);
-   }
-  calculateTaxes(){
-    console.log("the current value of profit Before tax: "+ this.companyInfo.profitBeforeTax)
-    // this.companyInfo.associateWagePercent = 28;
-    // this.companyInfo.profitBeforeTax = 100000000;
-    // this.companyInfo.companyIncomePercentTax = 15.5;
+  }
+
+  calculateTaxes() {
     this.updateCompanyInfo();
   }
-  updateCompanyInfo(){
+  updateCompanyInfo() {
     this.companyInfoService.changeMessage({
       associateWage: this.companyInfo.associateWage,
       associateWagePercent: this.companyInfo.associateWagePercent,
@@ -53,4 +48,3 @@ export class UserInputWizardStep1Component implements OnInit {
     });
   }
 }
-  

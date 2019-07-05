@@ -1,9 +1,12 @@
 <StackLayout orientation="vertical" class="wizardForm">
-    <Label text="Qual é o Faturamento total da empresa?" textWrap="true" class="wizardLabel"></Label>
-    <TextField keyboardType="number" class="placeHolderColor input m-t-10 m-b-10" hint="R$0.00" [(ngModel)]='companyInfo.profitBeforeTax'></TextField>
-    <Label text="Entre o valor mensal faturado pela empresa" textWrap="true" style="font-weight: 300;" class="hint"></Label>
+    <Label text="Qual é o faturamento mensal da empresa?" textWrap="true" class="wizardLabel"></Label>
+    <TextField keyboardType="number" class="placeHolderColor input m-t-10 m-b-10" required hint="R$0.00"
+        #profitBeforeTax="ngModel" [(ngModel)]='companyInfo.profitBeforeTax'></TextField>
 
-    <button class="m-t-10 button btn-outline" (tap)="calculateTaxes()" text="Continuar" [nsRouterLink]="['/userinputwizard2']"
-        pageTransition="slide"></button> -->
+    <Label text="Entre o valor mensal faturado pela empresa" textWrap="true" style="font-weight: 300;"
+        class="hint"></Label>
+
+    <button [ngClass]="profitBeforeTax.valid === true ? 'enabled' : 'disabled'" class="m-t-10 button btn-outline"
+        [isEnabled]="profitBeforeTax.valid" (tap)="calculateTaxes()" text="Continuar"
+        [nsRouterLink]="['/userinputwizard2']" pageTransition="slide"></button>
 </StackLayout>
-    

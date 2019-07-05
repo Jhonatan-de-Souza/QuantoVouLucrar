@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyInfo } from '~/app/components/shared/Company-Info.model';
 import { CompanyInfoService } from '~/app/services/company-info.service';
+import { Page } from 'tns-core-modules/ui/page/page';
 
 @Component({
   selector: 'ns-user-input-wizard-step3',
@@ -22,9 +23,10 @@ export class UserInputWizardStep3Component implements OnInit {
     totalProfit: undefined,
     totalTaxes: undefined,
   };
-  constructor(private companyInfoService: CompanyInfoService) { }
+  constructor(private companyInfoService: CompanyInfoService, private page: Page) { }
 
   ngOnInit() {
+    this.page.actionBarHidden = true;
     this.companyInfoService.currentMessage.subscribe(data => this.companyInfo = data)
   }
   calculateTaxes() {
@@ -34,9 +36,9 @@ export class UserInputWizardStep3Component implements OnInit {
     this.calculateTotalTaxesToPay();
     this.calculateCompanyProfit();
   }
-  
+
   calculateTaxesOnProfit() {
-    this.companyInfo.companyProfitTax = this.companyInfo.profitBeforeTax  * (this.companyInfo.companyIncomePercentTax / 100);
+    this.companyInfo.companyProfitTax = this.companyInfo.profitBeforeTax * (this.companyInfo.companyIncomePercentTax / 100);
   }
   // Calcula INSS - Previdência Social
   calculateInssTaxes() {
@@ -108,7 +110,7 @@ export class UserInputWizardStep3Component implements OnInit {
     this.updateCompanyInfo();
   }
 
-  updateCompanyInfo(){
+  updateCompanyInfo() {
     this.companyInfoService.changeMessage({
       associateWage: this.companyInfo.associateWage,
       associateWagePercent: this.companyInfo.associateWagePercent,

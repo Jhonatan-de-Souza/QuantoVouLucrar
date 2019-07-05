@@ -25,11 +25,12 @@ label {
     font-family: "Quicksand", "Quicksand-Regular", "Quicksand-Bold";
     color: white;
 }
+
 .wizardLabel {
     /* https://www.nativescript.org/blog/using-custom-fonts-in-a-nativescript-app */
     font-family: "Quicksand", "Quicksand-Regular", "Quicksand-Bold";
     color: black;
-    font-size:30;
+    font-size: 30;
 }
 
 .large {
@@ -62,6 +63,30 @@ label {
     font-family: "Quicksand", "Quicksand-Regular", "Quicksand-Bold";
     font-weight: 300;
 }
+
 .wizardForm {
-    padding:15%;
+    padding: 15%;
+}
+
+.ng-valid[required] {
+    border-bottom-color: #42A948;
+    border-bottom-width: 2;
+}
+
+.ng-invalid {
+    border-bottom-color: #2353b9;
+    border-bottom-width: 2;
+}
+
+.validation {
+    background-color: #a94442;
+    color: #ffffff;
+}
+
+.disabled {
+    color: gray;
+}
+
+.enabled {
+    font-weight: 500;
 }

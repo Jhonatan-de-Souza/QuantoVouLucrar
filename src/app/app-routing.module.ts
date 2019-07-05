@@ -7,7 +7,6 @@ import { Routes } from "@angular/router";
 import { ResultadosComponent } from './components/resultados/resultados.component';
 
 const routes: Routes = [
-    // { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "", redirectTo: "/userinputwizard1", pathMatch: "full" },
     { path: "userinputwizard1", component: UserInputWizardStep1Component },
     { path: "userinputwizard2", component: UserInputWizardStep2Component },
