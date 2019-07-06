@@ -1,14 +1,21 @@
-<StackLayout orientation="vertical" class="wizardForm">
-    <Label text="Quanto Pro-Labore irá retirar?" textWrap="true" class="wizardLabel"></Label>
+<StackLayout id="centralize" orientation="vertical" class="wizardForm">
+    <Label class="wizardLabel" textWrap="true">
+            <FormattedString>
+                <Span text="Percentual " color="black" class="bold"></Span>
+                <Span text="de " color="black" class="light"></Span>
+                <Span text="Pro-Labore " color="black" class="bold"></Span>
+                <Span text="a retirar?" color="black" class="light"></Span>
+            </FormattedString>
+    </Label>
 
-    <TextField keyboardType="number" class="placeHolderColor input m-t-10 m-b-10" hint="%"
+    <TextField #thirdTaxInput keyboardType="number" class="placeHolderColor input m-t-10 m-b-10" hint="%"
         #associateWagePercent="ngModel" required [(ngModel)]='companyInfo.associateWagePercent'></TextField>
 
-    <Label text="insira o percentual de pro-labore que deve ser retirado em cima do faturamento" textWrap="true"
+    <Label text="insira o percentual de Pro-Labore que deve ser retirado em cima do faturamento" textWrap="true"
         style="font-weight: 300;" class="hint"></Label>
 
 
     <button [ngClass]="associateWagePercent.valid === true ? 'enabled' : 'disabled'" class="m-t-10 button btn-outline"
-        [isEnabled]="associateWagePercent.valid" (tap)="calculateTaxes()" text="Continuar"
+        [isEnabled]="associateWagePercent.valid && companyInfo.associateWagePercent <= 100" (tap)="calculateTaxes()" text="Continuar"
         [nsRouterLink]="['/resultados']" pageTransition="slide"></button> -->
 </StackLayout>

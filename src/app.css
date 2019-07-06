@@ -28,9 +28,10 @@ label {
 
 .wizardLabel {
     /* https://www.nativescript.org/blog/using-custom-fonts-in-a-nativescript-app */
-    font-family: "Quicksand", "Quicksand-Regular", "Quicksand-Bold";
+    font-family: "Quicksand";
     color: black;
     font-size: 30;
+    flex-direction: column;
 }
 
 .large {
@@ -73,11 +74,6 @@ label {
     border-bottom-width: 2;
 }
 
-.ng-invalid {
-    border-bottom-color: #2353b9;
-    border-bottom-width: 2;
-}
-
 .validation {
     background-color: #a94442;
     color: #ffffff;
@@ -89,4 +85,26 @@ label {
 
 .enabled {
     font-weight: 500;
+}
+
+TextField {
+    border-bottom-width: 1;
+    border-bottom-color: transparent;
+}
+.placeHolderColor {
+    placeholder-color:#0a0000;
+    font-size: 20;
+}
+
+#centralize {
+    text-align: center;
+}
+
+.light {
+    font-weight: 100;
+    font-size:20;
+}
+
+.bold {
+    font-weight: 700
 }

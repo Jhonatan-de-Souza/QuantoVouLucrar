@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { CompanyInfo } from '~/app/components/shared/Company-Info.model';
 import { CompanyInfoService } from '~/app/services/company-info.service';
 import { Page } from 'tns-core-modules/ui/page/page';
@@ -9,7 +9,7 @@ import { Page } from 'tns-core-modules/ui/page/page';
   styleUrls: ['./user-input-wizard-step3.component.css'],
   moduleId: module.id,
 })
-export class UserInputWizardStep3Component implements OnInit {
+export class UserInputWizardStep3Component implements OnInit, AfterViewInit {
 
   companyInfo: CompanyInfo = {
     associateWage: undefined,
@@ -23,12 +23,22 @@ export class UserInputWizardStep3Component implements OnInit {
     totalProfit: undefined,
     totalTaxes: undefined,
   };
+  
+  @ViewChild("thirdTaxInput",{static:false}) thirdTaxInput: ElementRef;
+
   constructor(private companyInfoService: CompanyInfoService, private page: Page) { }
 
   ngOnInit() {
     this.page.actionBarHidden = true;
     this.companyInfoService.currentMessage.subscribe(data => this.companyInfo = data)
   }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.thirdTaxInput.nativeElement.focus();
+    },600);
+  }
+
   calculateTaxes() {
     this.calculateTaxesOnProfit();
     this.calculateInssTaxes();

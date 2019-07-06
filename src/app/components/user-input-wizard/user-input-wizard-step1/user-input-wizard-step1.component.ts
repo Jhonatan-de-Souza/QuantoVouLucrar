@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { RouterExtensions } from 'nativescript-angular/router';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CompanyInfoService } from '~/app/services/company-info.service';
 import { CompanyInfo } from '~/app/components/shared/Company-Info.model';
 import { Page } from 'tns-core-modules/ui/page/page';
+import { TextField } from "tns-core-modules/ui/text-field";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +13,7 @@ import { Page } from 'tns-core-modules/ui/page/page';
   styleUrls: ['./user-input-wizard-step1.component.css'],
   moduleId: module.id,
 })
-export class UserInputWizardStep1Component implements OnInit {
+export class UserInputWizardStep1Component implements OnInit, AfterViewInit {
   companyInfo: CompanyInfo = {
     associateWage: undefined,
     associateWagePercent: undefined,
@@ -23,13 +26,22 @@ export class UserInputWizardStep1Component implements OnInit {
     totalProfit: undefined,
     totalTaxes: undefined,
   };
-  constructor(private companyInfoService: CompanyInfoService, private page: Page) { }
+
+  @ViewChild("firstTax",{static:false}) firstTaxInput: ElementRef;
+  
+  constructor(private companyInfoService: CompanyInfoService, private page: Page,private routerExtensions: RouterExtensions) { }
 
   ngOnInit() {
     this.page.actionBarHidden = true;
     this.companyInfoService.currentMessage.subscribe(data => this.companyInfo = data)
+  
   }
-
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.firstTaxInput.nativeElement.focus();
+    },600);
+  }
+ 
   calculateTaxes() {
     this.updateCompanyInfo();
   }
