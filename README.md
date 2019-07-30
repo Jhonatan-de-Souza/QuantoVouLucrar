@@ -10,10 +10,10 @@ Para pessoas que tem ou querem abrir uma ME(Micro-Empresa) que se encaixam no Si
 
 ### Quais Tecnologias estão sendo usadas ###
 
-Nativescript (Criação de App Mobile)
-Javascript/Typescript
-Angular
-Html/CSS
+* Nativescript (Criação de App Mobile)
+* Javascript/Typescript
+* Angular
+* Html/CSS
 
 ### Detalhes ###
 1. Quando de Imposto eu terei que pagar
