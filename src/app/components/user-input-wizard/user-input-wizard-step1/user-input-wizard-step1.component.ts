@@ -26,7 +26,7 @@ export class UserInputWizardStep1Component implements OnInit, AfterViewInit {
     totalProfit: undefined,
     totalTaxes: undefined,
   };
-
+  //empresaUsaFatorR = false; // se a empresa usar o fator R ela necessáriamente tem que ter uma contribuição que representa 28% total do faturamento da empresa e tem que ser maior que o salário mínimo caso 28% da renda total da empresa não chegue a o salário mínimo é necessário que simplesmente seja usado o salário mínimo como valor para cálculo
   @ViewChild("firstTax",{static:false}) firstTaxInput: ElementRef;
   
   constructor(private companyInfoService: CompanyInfoService, private page: Page,private routerExtensions: RouterExtensions) { }
