@@ -2,7 +2,7 @@
 Um aplicativo Android que te permite calcular quando você irá Lucrar com sua ME(Micro Empresa)
 
 # Faça o download aqui:
-(Link para download da App Store)[https://www.amazon.com.br/Dev-Aprender-Quanto-Vou-Lucrar/dp/B07VHGK4Y2/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=quanto+vou+lucrar&qid=1579001996&s=mobile-apps&sr=1-1]
+[Link para download da App Store](https://www.amazon.com.br/Dev-Aprender-Quanto-Vou-Lucrar/dp/B07VHGK4Y2/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=quanto+vou+lucrar&qid=1579001996&s=mobile-apps&sr=1-1)
 ### O que esse app vai fazer? ###
 Ele vai te dizer quanto de fato quanto você ira lucrar.
 
